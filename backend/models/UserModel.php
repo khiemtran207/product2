@@ -70,8 +70,7 @@ class UserModel extends Model{
     }
 
     public function insertUser(){
-        $obj_insert = $this->connection->prepare("INSERT INTO users(username,password,firstname,lastname,phone,
-email,address,avatar,job,lastlogin,status) VALUES (:username,:password,:firstname,:lastname,:phone,:email,:address,:avatar,:job,:lastlogin,:status)");
+        $obj_insert = $this->connection->prepare("INSERT INTO users(username,password,firstname,lastname,phone,email,address,avatar,jobs,last_login,status) VALUES (:username,:password,:firstname,:lastname,:phone,:email,:address,:avatar,:job,:lastlogin,:status)");
         return $obj_insert->execute([
             ':username'=>$this->username,
             ':password'=>$this->password,
